@@ -1,0 +1,22 @@
+body{
+    background-color: #3D6AF2;
+}
+
+.navbar{
+    background-color: #F2BC1B;
+}
+
+.card{
+    margin: 10px;
+}
+
+.container{
+    display: flex;
+    overflow: auto;
+    padding-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
