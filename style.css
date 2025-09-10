@@ -13,7 +13,7 @@ body{
 .container{
     display: flex;
     overflow: auto;
-    padding-top: 20px;
+    padding-top: 100px;
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: row;
