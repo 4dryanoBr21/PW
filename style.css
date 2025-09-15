@@ -3,11 +3,17 @@ body{
 }
 
 .navbar{
-    background-color: #0785F2;
+    background-color: #f09833;
 }
 
 .card{
     margin: 10px;
+}
+
+#card-login{
+    width: 400px;
+    display: flex;
+    align-items: center;
 }
 
 .container{
