@@ -12,14 +12,18 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-    <title>Loja do Brasil - Login</title>
+    <title>Loja do Brasil - Cadastro</title>
 </head>
 
 <body>
-    <div class="container-fluid" style="margin-top: 200px;">
+    <div class="container-fluid" style="margin-top: 50px;">
         <div class="card" style="width: 300px;">
             <img src="img/loja_do_brasil_com_texto.png" alt="" style="width: 200px;">
             <div class="card-body">
+                <div id="produto01" class="mb-3">
+                    <label for="">Nome Completo</label>
+                    <input type="text" class="form-control">
+                </div>
                 <div class="mb-3">
                     <label for="">Usuário</label>
                     <input type="text" class="form-control">
@@ -28,9 +32,20 @@
                     <label for="">Senha</label>
                     <input type="password" class="form-control">
                 </div>
+                <div class="mb-3">
+                    <label for="">CPF</label>
+                    <input type="number" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="">Data de Nascimento</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="">Email</label>
+                    <input type="email" class="form-control">
+                </div>
                 <div class="d-grid gap-2">
-                    <button class="btn btn-primary" type="button">Entrar</button>
-                    <button id="cad" class="btn" type="button">Registrar</button>
+                    <button class="btn btn-primary" type="button">Registrar</button>
                 </div>
             </div>
         </div>
@@ -39,13 +54,7 @@
 
 <script>
 
-    var cad = document.getElementById("cad")
-
-    function login() {
-        window.open("cadastro.html")
-    }
-
-    cad.addEventListener("click", login)
+    
 
 </script>
 

@@ -1,28 +1,28 @@
 body{
-    background-color: #113A8C;
+    font-family: "Montserrat";
+    background-color: #eee;
 }
 
 .navbar{
-    background-color: #f09833;
+    background-color: #F2BC1B;
+}
+
+.container-fluid{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
 }
 
 .card{
     margin: 10px;
-}
-
-#card-login{
-    width: 400px;
     display: flex;
     align-items: center;
-}
-
-.container{
-    display: flex;
-    overflow: auto;
-    padding-top: 100px;
-    flex-wrap: wrap;
+    width: 300px;
+    flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
-    flex-direction: row;
-    align-content: center;
-    align-items: center;
 }
+
