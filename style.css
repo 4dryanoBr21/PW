@@ -3,6 +3,13 @@ body{
     background-color: #eee;
 }
 
+.ct-cart{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
 .navbar{
     background-color: #F2BC1B;
 }
@@ -34,3 +41,9 @@ body{
     justify-content: center;
 }
 
+.text-cart{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    line-height: 2px;
+}
