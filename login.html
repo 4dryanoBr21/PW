@@ -16,21 +16,24 @@
 </head>
 
 <body>
-    <div class="container-fluid" style="margin-top: 200px;">
+    <div class="container-fluid" style="display: flex; flex-direction: column; flex-wrap: nowrap; align-items: center;">
+        <img id="logo" src="img/loja_do_brasil_com_texto.png" alt="" style="width: 200px;">
         <div class="card" style="width: 300px;">
-            <img id="logo" src="img/loja_do_brasil_com_texto.png" alt="" style="width: 200px;">
             <div class="card-body">
                 <div class="mb-3">
                     <label for="">Usuário</label>
-                    <input type="text" class="form-control">
+                    <input id="username" type="text" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label for="">Senha</label>
-                    <input type="password" class="form-control">
+                    <input id="password" type="password" class="form-control">
                 </div>
                 <div class="d-grid gap-2">
-                    <button class="btn btn-primary" type="button">Entrar</button>
+                    <button id="entrar" class="btn btn-primary" type="button">Entrar</button>
                     <button id="cad" class="btn" type="button">Registrar</button>
+                </div>
+                <div id="alert">
+
                 </div>
             </div>
         </div>
@@ -39,7 +42,7 @@
 
 <script>
 
-    var cad = document.getElementById("cad")
+    const cad = document.getElementById("cad")
 
     function login() {
         window.open("cadastro.html", '_self')
@@ -51,13 +54,36 @@
 
 <script>
 
-    var index = document.getElementById("logo")
+    const index = document.getElementById("logo")
 
     function home() {
         window.open("index.html", '_self')
     }
 
     index.addEventListener("click", home)
+
+</script>
+
+<script>
+
+    const username = document.getElementById("username")
+    const senha = document.getElementById("password")
+    const entrar = document.getElementById("entrar")
+    const alerta = document.getElementById("alert")
+
+    function login(){
+        if(username.value === "admin"){
+            if(senha.value === "admin"){
+                window.open("index.html", '_self')
+            } else {
+                alerta.innerHTML = '<div class="alert alert-danger" role="alert">É necessário digitar sua senha para prosseguir!</div>'  
+            }
+        } else {
+          alerta.innerHTML = '<div class="alert alert-danger" role="alert">É necessário digitar seu usuário e senha para prosseguir!</div>'
+      }
+    }
+
+    entrar.addEventListener("click", login)
 
 </script>
 
