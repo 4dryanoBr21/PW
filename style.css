@@ -3,47 +3,32 @@ body{
     background-color: #eee;
 }
 
-.ct-cart{
+
+.navbar{
+    background-color: #F2BC1B;
+}
+
+.container{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
 }
 
-.navbar{
-    background-color: #F2BC1B;
-}
-
 .container-fluid{
     display: flex;
+    justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
 }
 
 .card{
     margin: 10px;
     display: flex;
     align-items: center;
-    width: 300px;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
 }
 
-.cart-ct{
+.cep{
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-}
-
-.text-cart{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    line-height: 2px;
+    padding: 20px;
 }
