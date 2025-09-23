@@ -45,7 +45,10 @@
                     <input id="email" type="email" class="form-control">
                 </div>
                 <div class="d-grid gap-2">
-                    <button class="btn btn-primary" type="button">Registrar</button>
+                    <button id="registrar" class="btn btn-primary" type="button">Registrar</button>
+                </div><br>
+                <div id="alert">
+
                 </div>
             </div>
         </div>
@@ -61,6 +64,37 @@
     }
 
     index.addEventListener("click", home)
+
+</script>
+
+<script>
+
+    const nome = document.getElementById("nome")
+    const username = document.getElementById("username")
+    const password = document.getElementById("password")
+    const cpf = document.getElementById("cpf")
+    const data = document.getElementById("data")
+    const email = document.getElementById("email")
+    const registrar = document.getElementById("registrar")
+    const alerta = document.getElementById("alert")
+
+    function cadastro(){
+        if(nome.value === ""){
+            alerta.innerHTML = '<div class="alert alert-danger" role="alert">É necessário digitar seu nome para prosseguir!</div>'
+        } else {
+            if(username.value === ""){
+                alerta.innerHTML = '<div class="alert alert-danger" role="alert">É necessário digitar seu usuário para prosseguir!</div>'
+            } else {
+                if(password.value === ""){
+                    alerta.innerHTML = '<div class="alert alert-danger" role="alert">É necessário digitar sua senha para prosseguir!</div>'
+                } else {
+                    
+                }
+            }
+        }
+    }
+
+    registrar.addEventListener("click", cadastro)
 
 </script>
 
