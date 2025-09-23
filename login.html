@@ -18,7 +18,7 @@
 <body>
     <div class="container-fluid" style="margin-top: 200px;">
         <div class="card" style="width: 300px;">
-            <img src="img/loja_do_brasil_com_texto.png" alt="" style="width: 200px;">
+            <img id="logo" src="img/loja_do_brasil_com_texto.png" alt="" style="width: 200px;">
             <div class="card-body">
                 <div class="mb-3">
                     <label for="">Usuário</label>
@@ -42,10 +42,22 @@
     var cad = document.getElementById("cad")
 
     function login() {
-        window.open("cadastro.html")
+        window.open("cadastro.html", '_self')
     }
 
     cad.addEventListener("click", login)
+
+</script>
+
+<script>
+
+    var index = document.getElementById("logo")
+
+    function home() {
+        window.open("index.html", '_self')
+    }
+
+    index.addEventListener("click", home)
 
 </script>
 

@@ -19,7 +19,7 @@
     <nav class="navbar fixed-top">
         <div class="container-fluid">
             <form class="d-flex" role="search">
-                <img src="img/logo.png" class="img-fluid" alt="..." style="width: 40px; margin-right: 15px;">
+                <img id="logo" src="img/logo.png" class="img-fluid" alt="..." style="width: 40px; margin-right: 15px;">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -95,9 +95,18 @@
                     <label for="floatingInput">Quantidade</label>
                 </div>
                 <div class="d-grid gap-2">
-                    <button class="btn btn-primary" type="button" style="font-weight: bold;">Adicionar ao
-                        Carrinho</button>
-                    <button class="btn btn-success" type="button">Comprar Agora</button>
+                    <button id="carrinho2" class="btn btn-primary" type="button" style="font-weight: bold;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                        Adicionar ao Carrinho
+                    </button>
+                    <button class="btn btn-success" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                            <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z"/>
+                        </svg>
+                        Comprar Agora
+                    </button>
                 </div><br>
                 <p>O iPhone 15 traz a Dynamic Island, câmera grande-angular de 48 MP e USB-C. Tudo em um vidro
                     resistente colorido por infusão e design em alumínio. Destaques A Dynamic Island Chega ao iPhone 15
@@ -205,7 +214,7 @@
     var entrar = document.getElementById("entrar")
 
     function login() {
-        window.open("login.html")
+        window.open("login.html", '_self')
     }
 
     entrar.addEventListener("click", login)
@@ -217,10 +226,34 @@
     var cart = document.getElementById("carrinho")
 
     function car_buy() {
-        window.open("carrinho.html")
+        window.open("carrinho.html", '_self')
     }
 
     cart.addEventListener("click", car_buy)
+
+</script>
+
+<script>
+
+    var cart2 = document.getElementById("carrinho2")
+
+    function car_buy2() {
+        window.open("carrinho.html", '_self')
+    }
+
+    cart2.addEventListener("click", car_buy2)
+
+</script>
+
+<script>
+
+    var index = document.getElementById("logo")
+
+    function home() {
+        window.open("index.html", '_self')
+    }
+
+    index.addEventListener("click", home)
 
 </script>
 
