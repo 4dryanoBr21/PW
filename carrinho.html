@@ -54,38 +54,35 @@
     <div class="container-fluid" style="margin-top: 100px;">
         <div class="card" style="padding: 20px;">
             <div class="card-body overflow-auto" style="height: 300px;">
-                <div class="container" style="margin-top: 20px;">
+                <div class="container item" style="margin-top: 20px;">
                     <img class="img-fluid" src="img/produtos/iPhone/iphone1.png" alt="" style="width: 100px;">
-                    <input class="form-control" type="number" name="quantidade" id="" value="1" style="width: 50px; margin-right: 20px;">
+                    <input class="form-control qtd" type="number" value="1" style="width: 50px; margin-right: 20px;">
                     <div class="texto-carrinho" style="line-height: 2px; margin-top: 12px;">
                         <p>iPhone 15 PRO MAX</p><br>
-                        <p style="color: green;">R$ 9.000,00</p>
+                        <p class="preco" style="color: green;" data-preco="9000">R$ 9.000,00</p>
+                        <p class="subtotal" style="color: blue;">Subtotal: R$ 9.000,00</p>
                     </div>
                 </div>
-                <div class="container" style="margin-top: 20px;">
-                    <img class="img-fluid" src="img/produtos/iPhone/iphone1.png" alt="" style="width: 100px;">
-                    <input class="form-control" type="number" name="quantidade" id="" value="1" style="width: 50px; margin-right: 20px;">
-                    <div class="texto-carrinho" style="line-height: 2px; margin-top: 12px;">
-                        <p>iPhone 15 PRO MAX</p><br>
-                        <p style="color: green;">R$ 9.000,00</p>
-                    </div>
-                </div>
-                <div class="container" style="margin-top: 20px;">
-                    <img class="img-fluid" src="img/produtos/iPhone/iphone1.png" alt="" style="width: 100px;">
-                    <input class="form-control" type="number" name="quantidade" id="" value="1" style="width: 50px; margin-right: 20px;">
-                    <div class="texto-carrinho" style="line-height: 2px; margin-top: 12px;">
-                        <p>iPhone 15 PRO MAX</p><br>
-                        <p style="color: green;">R$ 9.000,00</p>
-                    </div>
-                </div>
+
+                <!-- Repita para os outros produtos alterando apenas a imagem/nome -->
             </div>
-            <div class="cep">
-                <input type="text" class="form-control" placeholder="CEP: 00000-000" style="margin-right: 10px;">
-                <button class="btn btn-primary  ">Calcular</button>
+
+            <div class="cep" style="margin-top:10px;">
+                <input type="text" id="cep" class="form-control" placeholder="CEP: 00000-000"
+                    style="margin-right: 10px;">
+                <button id="btnCep" class="btn btn-primary">Calcular</button>
             </div>
-                <p style="color: royalblue;">Valor do frete: R$ 3,00</p>
-                <h4 style="color: green;">Total: R$ 27.000,00</h4><br>
-                <button style="font-weight: bold;" class="btn btn-success">Finalizar Compra</button>
+
+            <p id="frete" style="color: royalblue;">Valor do frete: R$ 0,00</p>
+
+            <div style="margin-top:10px;">
+                <input type="text" id="cupom" class="form-control" placeholder="Digite seu cupom">
+                <p style="font-size:12px;">Cupons: DESCONTO10 (10% off) ou FRETEGRATIS</p>
+            </div>
+
+            <h4 id="total" style="color: green;">Total: R$ 0,00</h4><br>
+            <button style="font-weight: bold;" class="btn btn-success">Finalizar Compra</button>
+
         </div>
     </div>
 
@@ -136,6 +133,76 @@
     }
 
     index.addEventListener("click", home)
+
+</script>
+
+<script>
+    
+    const itens = document.querySelectorAll('.item')
+    const totalEl = document.getElementById('total')
+    const freteEl = document.getElementById('frete')
+    const cepInput = document.getElementById('cep')
+    const btnCep = document.getElementById('btnCep')
+    const cupomInput = document.getElementById('cupom')
+
+    let valorFrete = 0
+    let desconto = 0
+
+    function atualizarTotais() {
+        let total = 0
+        itens.forEach(item => {
+            const preco = parseFloat(item.querySelector('.preco').dataset.preco)
+            const qtd = parseInt(item.querySelector('.qtd').value)
+            const subtotal = preco * qtd
+            item.querySelector('.subtotal').textContent =
+                `Subtotal: R$ ${subtotal.toLocaleString('pt-BR')}`
+            total += subtotal
+        });
+
+        if (desconto > 0) {
+            total = total - (total * desconto)
+        }
+
+        total += valorFrete
+
+        totalEl.textContent = `Total: R$ ${total.toLocaleString('pt-BR')}`
+    }
+
+    itens.forEach(item => {
+        item.querySelector('.qtd').addEventListener('input', atualizarTotais)
+    })
+
+    btnCep.addEventListener('click', () => {
+        const cep = cepInput.value
+        if (cep.startsWith('88495')) { // Garopaba
+            valorFrete = 15
+        } else if (cep.startsWith('88780')) { // Imbituba
+            valorFrete = 20
+        } else if (cep.startsWith('88490')) { // Paulo Lopes
+            valorFrete = 10
+        } else {
+            valorFrete = 30
+        }
+        freteEl.textContent = `Valor do frete: R$ ${valorFrete.toLocaleString('pt-BR')}`
+        aplicarCupom()
+    })
+
+    function aplicarCupom() {
+        const cupom = cupomInput.value.trim().toUpperCase()
+        desconto = 0
+        if (cupom === 'DESCONTO10') {
+            desconto = 0.10
+        }
+        if (cupom === 'FRETEGRATIS') {
+            valorFrete = 0
+            freteEl.textContent = `Valor do frete: R$ 0,00`
+        }
+        atualizarTotais()
+    }
+
+    cupomInput.addEventListener('input', aplicarCupom)
+
+    atualizarTotais()
 
 </script>
 

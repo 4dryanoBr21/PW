@@ -88,7 +88,19 @@
                 if(password.value === ""){
                     alerta.innerHTML = '<div class="alert alert-danger" role="alert">É necessário digitar sua senha para prosseguir!</div>'
                 } else {
-                    
+                    if(cpf.value === ""){
+                        alerta.innerHTML = '<div class="alert alert-danger" role="alert">É necessário digitar seu CPF para prosseguir!</div>'
+                    } else {
+                        if(data.value === ""){
+                            alerta.innerHTML = '<div class="alert alert-danger" role="alert">É necessário digitar sua data de nascimento para prosseguir!</div>'
+                        } else {
+                            if(email.value === ""){
+                                alerta.innerHTML = '<div class="alert alert-danger" role="alert">É necessário digitar seu mail para prosseguir!</div>'
+                            } else {
+                                alerta.innerHTML = '<div class="alert alert-success" role="alert">Usuário Cadastrado com sucesso!</div>'
+                            }
+                        }
+                    }
                 }
             }
         }

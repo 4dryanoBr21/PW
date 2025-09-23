@@ -74,7 +74,7 @@
     function login(){
         if(username.value === "admin"){
             if(senha.value === "admin"){
-                window.open("index.html", '_self')
+                alerta.innerHTML = '<div class="alert alert-success" role="alert">Usuário Logado com Sucesso!</div>'
             } else {
                 alerta.innerHTML = '<div class="alert alert-danger" role="alert">É necessário digitar sua senha para prosseguir!</div>'  
             }
