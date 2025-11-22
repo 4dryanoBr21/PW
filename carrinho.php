@@ -1,4 +1,13 @@
-<?php include("functions/conexao.php"); ?>
+<?php
+    session_start();
+
+    if (!isset($_SESSION["user_id"])) {
+        header("Location: login.php");
+        exit;
+    }
+
+    include("functions/conexao.php");
+?>
 
 <!DOCTYPE html>
 <html lang="en">
