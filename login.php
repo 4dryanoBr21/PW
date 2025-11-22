@@ -1,4 +1,42 @@
-<?php include("functions/conexao.php"); ?>
+<?php
+
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
+    include("functions/conexao.php");
+    session_start();
+
+    // Verifica se o formulário foi enviado
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+
+        // Proteção básica
+        $username = mysqli_real_escape_string($conexao, $username);
+
+        // Busca o usuário no banco
+        $sql = "SELECT id, usuario, senha FROM usuarios WHERE usuario = '$username' LIMIT 1";
+        $result = mysqli_query($conexao, $sql);
+
+        if ($result && mysqli_num_rows($result) === 1) {
+            $user = mysqli_fetch_assoc($result);
+
+            // Verifica a senha (HASH)
+            if (password_verify($password, $user["senha"])) {
+                $_SESSION["user_id"] = $user["id"];
+                $_SESSION["username"] = $user["username"];
+
+                header("Location: index.php");
+                exit;
+            } else {
+                $erro = "Senha incorreta.";
+            }
+        } else {
+            $erro = "Usuário não encontrado.";
+        }
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,21 +60,26 @@
         <img id="logo" src="img/loja_do_brasil_com_texto.png" alt="" style="width: 200px;">
         <div class="card" style="width: 300px;">
             <div class="card-body">
-                <div class="mb-3">
-                    <label for="">Usuário</label>
-                    <input id="username" type="text" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <label for="">Senha</label>
-                    <input id="password" type="password" class="form-control">
-                </div>
-                <div class="d-grid gap-2">
-                    <button id="entrar" class="btn btn-primary" type="button">Entrar</button>
-                    <button id="cad" class="btn" type="button">Registrar</button>
-                </div>
-                <div id="alert">
-
-                </div>
+                <form method="POST" action="">
+                    <?php if (!empty($erro)) { ?>
+                        <div class="alert alert-danger"><?php echo $erro; ?></div>
+                    <?php } ?>
+                    
+                    <div class="mb-3">
+                        <label>Usuário</label>
+                        <input name="username" type="text" class="form-control" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label>Senha</label>
+                        <input name="password" type="password" class="form-control" required>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary" type="submit">Entrar</button>
+                        <button id="cad" class="btn" type="button">Registrar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

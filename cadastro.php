@@ -1,5 +1,9 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include("functions/conexao.php");
 
 if (isset($_POST['submit'])) {
@@ -11,10 +15,22 @@ if (isset($_POST['submit'])) {
     $data_nascimento = $_POST['data'];
     $email = $_POST['email'];
 
-    $result = mysqli_query($mysqli, "INSERT INTO usuario (nome, usuario, senha, cpf, data_nascimento, email) VALUES ('$nome', '$usuario', '$senha', '$cpf', '$data_nascimento', '$email')");
+    // Gera hash seguro da senha
+    $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
-    //header("Location: login.php");
+    // Prepared statement para segurança
+    $stmt = $conexao->prepare("INSERT INTO usuario (nome, usuario, senha, cpf, data_nascimento, email) VALUES (?, ?, ?, ?, ?, ?)");
 
+    $stmt->bind_param("ssssss", $nome, $usuario, $senhaHash, $cpf, $data_nascimento, $email);
+
+    if ($stmt->execute()) {
+        //header("Location: login.php");
+        echo "Cadastro realizado com sucesso.";
+    } else {
+        echo "Erro: " . $stmt->error;
+    }
+
+    $stmt->close();
 }
 
 ?>
@@ -41,33 +57,33 @@ if (isset($_POST['submit'])) {
         <img id="logo" src="img/loja_do_brasil_com_texto.png" alt="" style="width: 200px;">
         <div class="card" style="width: 300px;">
             <div class="card-body">
-                <form action="" method="post">
+                <form action="" method="post" id="form">
                     <div class="mb-3">
                         <label for="">Nome Completo</label>
-                        <input name="nome" id="nome" type="text" class="form-control" require>
+                        <input name="nome" id="nome" type="text" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label for="">Usuário</label>
-                        <input name="username" id="username" type="text" class="form-control" require>
+                        <input name="username" id="username" type="text" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label for="">Senha</label>
-                        <input name="password" id="password" type="password" class="form-control" require>
+                        <input name="password" id="password" type="password" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label for="">CPF</label>
-                        <input name="cpf" id="cpf" type="number" class="form-control" require>
+                        <input name="cpf" id="cpf" type="number" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label for="">Data de Nascimento</label>
-                        <input name="data" id="data" type="date" class="form-control" require>
+                        <input name="data" id="data" type="date" class="form-control" required>
                     </div>
                     <div class="mb-3">
                         <label for="">Email</label>
-                        <input name="email" id="email" type="email" class="form-control" require>
+                        <input name="email" id="email" type="email" class="form-control" required>
                     </div>
                     <div class="d-grid gap-2">
-                        <button id="registrar" class="btn btn-primary" type="submit">Registrar</button>
+                        <button id="registrar" name="submit" class="btn btn-primary" type="submit">Registrar</button>
                     </div><br>
                     <div id="alert">
 
@@ -89,44 +105,30 @@ if (isset($_POST['submit'])) {
 </script>
 
 <script>
-    const nome = document.getElementById("nome")
-    const username = document.getElementById("username")
-    const password = document.getElementById("password")
-    const cpf = document.getElementById("cpf")
-    const data = document.getElementById("data")
-    const email = document.getElementById("email")
-    const registrar = document.getElementById("registrar")
-    const alerta = document.getElementById("alert")
 
-    function cadastro() {
-        if (nome.value === "") {
-            alerta.innerHTML = '<div class="alert alert-danger" role="alert">É necessário digitar seu nome para prosseguir!</div>'
-        } else {
-            if (username.value === "") {
-                alerta.innerHTML = '<div class="alert alert-danger" role="alert">É necessário digitar seu usuário para prosseguir!</div>'
-            } else {
-                if (password.value === "") {
-                    alerta.innerHTML = '<div class="alert alert-danger" role="alert">É necessário digitar sua senha para prosseguir!</div>'
-                } else {
-                    if (cpf.value === "") {
-                        alerta.innerHTML = '<div class="alert alert-danger" role="alert">É necessário digitar seu CPF para prosseguir!</div>'
-                    } else {
-                        if (data.value === "") {
-                            alerta.innerHTML = '<div class="alert alert-danger" role="alert">É necessário digitar sua data de nascimento para prosseguir!</div>'
-                        } else {
-                            if (email.value === "") {
-                                alerta.innerHTML = '<div class="alert alert-danger" role="alert">É necessário digitar seu mail para prosseguir!</div>'
-                            } else {
-                                alerta.innerHTML = '<div class="alert alert-success" role="alert">Usuário Cadastrado com sucesso!</div>'
-                            }
-                        }
-                    }
-                }
-            }
+    const nome = document.getElementById("nome");
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+    const cpf = document.getElementById("cpf");
+    const data = document.getElementById("data");
+    const email = document.getElementById("email");
+    const alerta = document.getElementById("alert");
+    const form = document.getElementById("form");
+
+    form.addEventListener("submit", (e) => {
+        if (
+            nome.value === "" ||
+            username.value === "" ||
+            password.value === "" ||
+            cpf.value === "" ||
+            data.value === "" ||
+            email.value === ""
+        ) {
+            e.preventDefault();
+            alerta.innerHTML = '<div class="alert alert-danger" role="alert">Preencha todos os campos!</div>';
         }
-    }
+    });
 
-    registrar.addEventListener("click", cadastro)
 </script>
 
 </html>
