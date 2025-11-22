@@ -1,3 +1,5 @@
+<?php include("functions/conexao.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,13 +59,13 @@
                 <div id="carouselExample" class="carousel slide">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="img/produtos/iPhone/iphone1.png" class="d-block w-100" alt="...">
+                            <img src="img/produtos/notebook/not1.png" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="img/produtos/iPhone/iphone2.png" class="d-block w-100" alt="...">
+                            <img src="img/produtos/notebook/not2.png" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="img/produtos/iPhone/iphone3.png" class="d-block w-100" alt="...">
+                            <img src="img/produtos/notebook/not3.png" class="d-block w-100" alt="...">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
@@ -77,10 +79,10 @@
                         <span class="visually-hidden">Next</span>
                     </button><br>
                 </div>
-                <h1>iPhone 15 PRO MAX 128GB</h1>
-                <h3 id="valor" style="color: green; font-weight: bold;">R$ 9.000,00</h3>
-                <h6 style="color: green;">ou 12x de R$ 750,00 sem juros</h6>
-                <h6 style="color: royalblue;">Entregue até terça feira</h6><br>
+                <h1>Notebook 15.6" Lenovo IdeaPad</h1>
+                <h3 id="valor" style="color: green; font-weight: bold;">R$ 3.000,00</h3>
+                <h6 style="color: green;">ou 12x de R$ 250,00 sem juros</h6>
+                <h6 style="color: royalblue;">Entregue até sabado feira</h6><br>
                 <p> <img src="https://logospng.org/download/visa/logo-visa-256.png" alt="" style="width: 20px;"> <img
                         src="https://logospng.org/download/mastercard/logo-mastercard-256.png" alt=""
                         style="width: 20px;"> Cartões de Crédito</p>
@@ -96,111 +98,100 @@
                 </div>
                 <div class="d-grid gap-2">
                     <button id="carrinho2" class="btn btn-primary" type="button" style="font-weight: bold;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-cart" viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
                         </svg>
                         Adicionar ao Carrinho
                     </button>
                     <button class="btn btn-success" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
-                            <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                            <path
+                                d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z" />
                         </svg>
                         Comprar Agora
                     </button>
                 </div><br>
-                <p>O iPhone 15 traz a Dynamic Island, câmera grande-angular de 48 MP e USB-C. Tudo em um vidro
-                    resistente colorido por infusão e design em alumínio. Destaques A Dynamic Island Chega ao iPhone 15
-                    A Dynamic Island mostra alertas e Atividades ao Vivo para você não perder nenhuma informação
-                    enquanto faz outras coisas. Você pode acompanhar sua próxima corrida, saber quem está ligando</p>
+                <p>Impulsione sua mobilidade com o IdeaPad Slim 3i com processadores Intel® Core™ Series. Experimente
+                    visuais nítidos em uma tela elegante com resolução WUXGA (1920x1200) que dá vida ao seu conteúdo,
+                    pesando apenas 1,59 kg e com espessura de 16,9 mm. Um dispositivo realmente portátil, com uma
+                    poderosa bateria de 50Wh e tecnologia de carregamento rápido. Tecnologia ecológica com desempenho de
+                    ponta: Adote um estilo mais sustentável sem sacrificar o desempenho com a tecnologia IMR (In-Mold
+                    Rolling) para reduzir significativamente o desperdício e o uso de energia na produção. A tampa
+                    traseira contém 30% de material reciclado. Nossa embalagem redesenhada, feita com materiais
+                    reciclados, reduz o impacto ambiental desde o desenvolvimento até sua porta. Sem amarras: uma
+                    história sem dependência de tomadas: Diga adeus à ansiedade por falta de energia enquanto estiver em
+                    movimento com o laptop IdeaPad Slim 3i e aproveite a longa duração da bateria além do carregamento
+                    rápido que oferece um reforço de 2 horas de energia com apenas 15 minutos de carga — mais rápido que
+                    uma pausa para o café. Visível quando necessário: Controle sua visibilidade digital na câmera com o
+                    obturador de privacidade. Mantenha o foco em chamadas de vídeo quando precisar ser visto e
+                    desapareça de vista para se proteger de intrusões digitais inesperadas. Veja cada detalhe, ame cada
+                    momento: Torne cada momento memorável em uma tela WUXGA WVA, garantindo cores vibrantes e detalhes
+                    nítidos de qualquer ângulo. Desfrute de uma experiência visual mais imersiva com a proporção de
+                    16:10, oferecendo mais espaço vertical para streaming, jogos ou estudos contínuos. A certificação
+                    TÜV ajuda a proteger seus olhos durante sessões de tela prolongadas.</p>
                 <section class="grid" aria-labelledby="especs-title">
                     <div>
                         <h2 id="especs-title">Especificações principais</h2>
                         <table>
                             <tbody>
                                 <tr>
-                                    <th>Tela</th>
-                                    <td>OLED Super Retina XDR, 6,1" (~2556×1179, ≈460 ppi)</td>
+                                    <th>Detalhe Memória RAM</th>
+                                    <td>8GB Soldado DDR5-4800 + 8GB SO-DIMM DDR5-4800</td>
                                 </tr>
                                 <tr>
-                                    <th>Brilho</th>
-                                    <td>~1000 nits (uso), ~1600 nits (HDR), ~2000 nits (externo)</td>
+                                    <th>Cache</th>
+                                    <td>24mb</td>
                                 </tr>
                                 <tr>
-                                    <th>Processador</th>
-                                    <td>A16 Bionic</td>
+                                    <th>Bateria</th>
+                                    <td>3 células 50Wh</td>
                                 </tr>
                                 <tr>
-                                    <th>Dimensões & peso</th>
-                                    <td>~147.6 × 71.6 × 7.8 mm · ~171 g</td>
+                                    <th>Chipset</th>
+                                    <td>Intel SoC Platform</td>
                                 </tr>
                                 <tr>
-                                    <th>Armazenamento</th>
-                                    <td>128 GB · 256 GB · 512 GB</td>
+                                    <th>Tamanho do SSD</th>
+                                    <td>512GB SSD M.2 2242 PCIe Gen4 QLC</td>
                                 </tr>
                                 <tr>
-                                    <th>Construção</th>
-                                    <td>Frente Ceramic Shield, traseira de vidro, estrutura de alumínio</td>
+                                    <th>Resolução da Tela</th>
+                                    <td>WUXGA (1920 x 1200), IPS, antirreflexo, Sem tela tátil, 45%NTSC, 300 nits, 60Hz
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
-
-                    <div>
-                        <h2 id="camera-title">Câmeras</h2>
-                        <ul>
-                            <li>Traseira dupla:
-                                <ul>
-                                    <li>Principal 48 MP com estabilização (sensor-shift), ƒ/1.6</li>
-                                    <li>Ultra-angular 12 MP, campo ~120°, ƒ/2.4</li>
-                                </ul>
-                            </li>
-                            <li>Zoom: aproximado 2× óptico (por lente) e zoom digital até ~10×</li>
-                            <li>Frontal: 12 MP com autofocus</li>
-                        </ul>
-
-                        <h2 id="batt-title">Bateria & carregamento</h2>
-                        <ul>
-                            <li>Capacidade aproximada: 3349 mAh</li>
-                            <li>Conector: USB-C (carregamento com fio)</li>
-                            <li>Sem fio: MagSafe e compatibilidade Qi2</li>
-                        </ul>
-                    </div>
-
-                    <div class="full">
-                        <h2>Outras características</h2>
-                        <ul>
-                            <li>Certificação IP68 (resistência à água e poeira)</li>
-                            <li>Face ID para desbloqueio facial</li>
-                            <li>Dynamic Island (ilha dinâmica) substitui o notch</li>
-                            <li>Cores: preto, azul, verde, amarelo, rosa</li>
-                        </ul>
-                    </div>
+                    </div><br>
                 </section>
                 <div class="form-floating">
                     <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
                         style="height: 100px"></textarea>
                     <label for="floatingTextarea2">Digite aqui sua avaliação</label>
                 </div>
-                <button type="button" class="btn btn-primary" style="margin-bottom: 40px; margin-top: 10px;">Publicar</button>
+                <button type="button" class="btn btn-primary"
+                    style="margin-bottom: 40px; margin-top: 10px;">Publicar</button>
                 <div class="avaliacoes overflow-auto" style="height: 200px;">
                     <div class="avaliacao">
                         00/00/0000 ⭐ ⭐ ⭐ ⭐ ⭐
                         <p>Melhor produto do mundo!</p>
                     </div><br>
                     <div class="avaliacao">
-                        00/00/0000 ⭐ ⭐ ⭐ ⭐  
+                        00/00/0000 ⭐ ⭐ ⭐ ⭐
                         <p>Melhor produto do mundo!</p>
                     </div><br>
                     <div class="avaliacao">
-                        00/00/0000 ⭐ ⭐ ⭐    
+                        00/00/0000 ⭐ ⭐ ⭐
                         <p>Melhor produto do mundo!</p>
                     </div><br>
                     <div class="avaliacao">
-                        00/00/0000 ⭐ ⭐      
+                        00/00/0000 ⭐ ⭐
                         <p>Melhor produto do mundo!</p>
                     </div><br>
                     <div class="avaliacao">
-                        00/00/0000 ⭐        
+                        00/00/0000 ⭐
                         <p>Melhor produto do mundo!</p>
                     </div><br>
                 </div>
@@ -214,7 +205,7 @@
     const entrar = document.getElementById("entrar")
 
     function login() {
-        window.open("login.html", '_self')
+        window.open("login.php", '_self')
     }
 
     entrar.addEventListener("click", login)
@@ -226,7 +217,7 @@
     const cart = document.getElementById("carrinho")
 
     function car_buy() {
-        window.open("carrinho.html", '_self')
+        window.open("carrinho.php", '_self')
     }
 
     cart.addEventListener("click", car_buy)
@@ -238,7 +229,7 @@
     const cart2 = document.getElementById("carrinho2")
 
     function car_buy2() {
-        window.open("carrinho.html", '_self')
+        window.open("carrinho.php", '_self')
     }
 
     cart2.addEventListener("click", car_buy2)
@@ -250,7 +241,7 @@
     const index = document.getElementById("logo")
 
     function home() {
-        window.open("index.html", '_self')
+        window.open("index.php  ", '_self')
     }
 
     index.addEventListener("click", home)
@@ -258,10 +249,10 @@
 </script>
 
 <script>
-    
+
     const valor = document.getElementById("valor")
     const quantidade = document.getElementById("quantidade")
-    const precoUnitario = 9000
+    const precoUnitario = 3000
 
     function preco_quantidade() {
         const qtd = parseInt(quantidade.value) || 1

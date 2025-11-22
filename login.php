@@ -1,3 +1,5 @@
+<?php include("functions/conexao.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,7 +47,7 @@
     const cad = document.getElementById("cad")
 
     function login() {
-        window.open("cadastro.html", '_self')
+        window.open("cadastro.php", '_self')
     }
 
     cad.addEventListener("click", login)
@@ -57,7 +59,7 @@
     const index = document.getElementById("logo")
 
     function home() {
-        window.open("index.html", '_self')
+        window.open("index.php", '_self')
     }
 
     index.addEventListener("click", home)
