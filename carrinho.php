@@ -63,40 +63,35 @@
         </div>
     </nav>
     <div class="container-fluid" style="margin-top: 100px;">
-        <div class="card" style="padding: 20px;">
-            <div class="card-body overflow-auto" style="height: 300px;">
-                <div class="container item" style="margin-top: 20px;">
-                    <img class="img-fluid" src="img/produtos/iPhone/iphone1.png" alt="" style="width: 100px;">
-                    <input class="form-control qtd" type="number" value="1" style="width: 50px; margin-right: 20px;">
-                    <div class="texto-carrinho" style="line-height: 2px; margin-top: 12px;">
-                        <p>iPhone 15 PRO MAX</p><br>
-                        <p class="preco" style="color: green;" data-preco="9000">R$ 9.000,00</p>
-                        <p class="subtotal" style="color: blue;">Subtotal: R$ 9.000,00</p>
+        <div class="row">
+            <div class="col">
+                <div class="card" style="padding: 20px;">
+                    <div class="card-body overflow-auto">
+                        <div class="container item" style="margin-top: 20px;">
+                            <img class="img-fluid" src="img/produtos/iPhone/iphone1.png" alt="" style="width: 100px;">
+                            <input class="form-control qtd" type="number" value="1" style="width: 50px; margin-right: 20px;">
+                            <div class="texto-carrinho" style="line-height: 2px; margin-top: 12px;">
+                                <p>iPhone 15 PRO MAX</p><br>
+                                <p class="preco" style="color: green;" data-preco="9000">R$ 9.000,00</p>
+                                <p class="subtotal" style="color: blue;">Subtotal: R$ 9.000,00</p>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <input type="text" id="cep" class="form-control" placeholder="CEP: 00000-000" style="margin-right: 10px;">
+                            <button id="btnCep" class="btn btn-primary">Calcular</button>
+                            <p id="frete" style="color: royalblue;">Valor do frete: R$ 0,00</p>
+                            <div style="margin-top:10px;">
+                                <input type="text" id="cupom" class="form-control" placeholder="Digite seu cupom">
+                                <p style="font-size:12px;">Cupons: DESCONTO10 (10% off) ou FRETEGRATIS</p>
+                            </div>
+                            <h4 id="total" style="color: green;">Total: R$ 0,00</h4><br>
+                            <button style="font-weight: bold;" class="btn btn-success">Finalizar Compra</button>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Repita para os outros produtos alterando apenas a imagem/nome -->
             </div>
-
-            <div class="cep" style="margin-top:10px;">
-                <input type="text" id="cep" class="form-control" placeholder="CEP: 00000-000"
-                    style="margin-right: 10px;">
-                <button id="btnCep" class="btn btn-primary">Calcular</button>
-            </div>
-
-            <p id="frete" style="color: royalblue;">Valor do frete: R$ 0,00</p>
-
-            <div style="margin-top:10px;">
-                <input type="text" id="cupom" class="form-control" placeholder="Digite seu cupom">
-                <p style="font-size:12px;">Cupons: DESCONTO10 (10% off) ou FRETEGRATIS</p>
-            </div>
-
-            <h4 id="total" style="color: green;">Total: R$ 0,00</h4><br>
-            <button style="font-weight: bold;" class="btn btn-success">Finalizar Compra</button>
-
         </div>
     </div>
-
 </body>
 
 <script>
