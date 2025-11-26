@@ -53,55 +53,55 @@
             </form>
         </div>
     </nav>
-    <div class="container-fluid" style="padding: 50px; margin-top: 50px;">
+    <div class="container-fluid" style="margin-top: 100px;">
         <div class="row">
             <div class="col-md-4">
-                <div class="card" style="text-align: center;">
+                <div class="card text-center">
                     <div class="card-body">
                         <img id="prod1" src="img/produtos/iPhone/iphone1.png" alt="" style="width: 300px; margin-bottom: 20px;"><br>
                         <p>iPhone 16 PRO MAX 128GB</p>
                         <h3 style="color: green;">R$ 9.000,00</h3>
                     </div>
-                </div>
-                <div class="card" style="text-align: center;">
+                </div><br>
+                <div class="card text-center">
                     <div class="card-body">
                         <img id="prod2" src="img/produtos/notebook/not1.png" alt="" style="width: 300px; margin-bottom: 20px;"><br>
                         <p>Notebook 15.6" Lenovo IdeaPad</p>
                         <h3 style="color: green;">R$ 3.000,00</h3>
                     </div>
-                </div>
+                </div><br>
             </div>
             <div class="col-md-4">
-                <div class="card" style="text-align: center;">
+                <div class="card text-center">
                     <div class="card-body">
                         <img id="prod1" src="img/produtos/maquina_de_lavar/maquina1.png" alt="" style="width: 300px; margin-bottom: 20px;"><br>
                         <p>Máquina de Lavar 15kg Electrolux</p>
                         <h3 style="color: green;">R$ 2.000,00</h3>
                     </div>
-                </div>
-                <div class="card" style="text-align: center;">
+                </div><br>
+                <div class="card text-center">
                     <div class="card-body">
                         <img id="prod1" src="img/produtos/raçaõ_para_gatos/ração.png" alt="" style="width: 300px; margin-bottom: 20px;"><br>
                         <p>Ração Optimum para Gatos Adultos</p>
                         <h3 style="color: green;">R$ 150,00</h3>
                     </div>
-                </div>
+                </div><br>
             </div>
             <div class="col-md-4">
-                <div class="card" style="text-align: center;">
+                <div class="card text-center">
                     <div class="card-body">
                         <img id="prod1" src="img/produtos/premiere/premiere.png" alt="" style="width: 300px; margin-bottom: 20px;"><br>
                         <p>Adobe Premiere Pro 2025 Handbook</p>
                         <h3 style="color: green;">R$ 110,00</h3>
                     </div>
-                </div>
-                <div class="card" style="text-align: center;">
+                </div><br>
+                <div class="card text-center">
                     <div class="card-body">
                         <img id="prod1" src="img/produtos/w10/win10.png" alt="" style="width: 300px; margin-bottom: 20px;"><br>
                         <p>MS Win 11 Pro OEM Chave GLOBAL</p>
                         <h3 style="color: green;">R$ 9  0,00</h3>
                     </div>
-                </div>
+                </div><br>
             </div>
         </div>
     </div>
