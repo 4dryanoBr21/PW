@@ -16,12 +16,12 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
 
     // Gera hash seguro da senha
-    $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+    //$senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
     // Prepared statement para segurança
-    $stmt = $conexao->prepare("INSERT INTO usuario (nome, usuario, senha, cpf, data_nascimento, email) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt = $conexao->prepare("INSERT INTO usuario (nome, usuario, senha, cpf, data_nascimento, email) VALUES (?, ?, PASSWORD(?), ?, ?, ?)");
 
-    $stmt->bind_param("ssssss", $nome, $usuario, $senhaHash, $cpf, $data_nascimento, $email);
+    $stmt->bind_param("sssiss", $nome, $usuario, $senha, $cpf, $data_nascimento, $email);
 
     if ($stmt->execute()) {
         //header("Location: login.php");
