@@ -86,7 +86,6 @@ if (isset($_POST['submit'])) {
                         <button id="registrar" name="submit" class="btn btn-primary" type="submit">Registrar</button>
                     </div><br>
                     <div id="alert">
-
                     </div>
                 </form>
             </div>
@@ -98,10 +97,10 @@ if (isset($_POST['submit'])) {
     var index = document.getElementById("logo")
 
     function home() {
-        window.open("index.html", '_self')
+        window.open("index.php", '_self')
     }
 
-    index.addEventListener("click", home)
+    index.addEventListener("click", home())
 </script>
 
 <script>
