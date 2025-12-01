@@ -1,17 +1,4 @@
-<?php 
-include("functions/conexao.php"); 
-
-//iPhone
-$sql = "SELECT * FROM produto WHERE id = 1";
-$result = $conexao->query($sql);
-if($result->num_rows > 0){
-    while($row = $result->fetch_assoc()){
-        $iphone_nome = $row["nome"];
-        $iphone_preco = $row["preco"];
-    }
-}
-
-?>
+<?php include("functions/conexao.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -72,14 +59,33 @@ if($result->num_rows > 0){
                 <div class="card text-center">
                     <div class="card-body">
                         <img id="prod1" src="img/produtos/iPhone/iphone1.png" alt="" style="width: 300px; margin-bottom: 20px;"><br>
-                        <p><?php echo isset($iphone_nome) ? $iphone_nome : 'Produto não encontrado'; ?></p>
-                        <h3 style="color: green;"><?php echo isset($iphone_preco) ? $iphone_preco : 'Preço não encontrado'; ?></h3>
+                        <?php 
+                            //iPhone
+                            $sql = "SELECT * FROM produto WHERE id = 1";
+                            $result = $conexao->query($sql);
+                            if($result->num_rows > 0){
+                                while($row = $result->fetch_assoc()){
+                                    echo "<p>{$row["nome"]}</p>";
+                                   echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
+                                }
+                            }
+                        ?>
                     </div>
                 </div><br>
                 <div class="card text-center">
                     <div class="card-body">
                         <img id="prod2" src="img/produtos/notebook/not1.png" alt="" style="width: 300px; margin-bottom: 20px;"><br>
-                        <h3 style="color: green;">R$ 3.000,00</h3>
+                        <?php 
+                            //iPhone
+                            $sql = "SELECT * FROM produto WHERE id = 4";
+                            $result = $conexao->query($sql);
+                            if($result->num_rows > 0){
+                                while($row = $result->fetch_assoc()){
+                                    echo "<p>{$row["nome"]}</p>";
+                                   echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
+                                }
+                            }
+                        ?>
                     </div>
                 </div><br>
             </div>
@@ -87,15 +93,33 @@ if($result->num_rows > 0){
                 <div class="card text-center">
                     <div class="card-body">
                         <img id="prod1" src="img/produtos/maquina_de_lavar/maquina1.png" alt="" style="width: 300px; margin-bottom: 20px;"><br>
-                        <p>Máquina de Lavar 15kg Electrolux</p>
-                        <h3 style="color: green;">R$ 2.000,00</h3>
+                        <?php 
+                            //iPhone
+                            $sql = "SELECT * FROM produto WHERE id = 2";
+                            $result = $conexao->query($sql);
+                            if($result->num_rows > 0){
+                                while($row = $result->fetch_assoc()){
+                                    echo "<p>{$row["nome"]}</p>";
+                                   echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
+                                }
+                            }
+                        ?>
                     </div>
                 </div><br>
                 <div class="card text-center">
                     <div class="card-body">
                         <img id="prod1" src="img/produtos/raçaõ_para_gatos/ração.png" alt="" style="width: 300px; margin-bottom: 20px;"><br>
-                        <p>Ração Optimum para Gatos Adultos</p>
-                        <h3 style="color: green;">R$ 150,00</h3>
+                        <?php 
+                            //iPhone
+                            $sql = "SELECT * FROM produto WHERE id = 5";
+                            $result = $conexao->query($sql);
+                            if($result->num_rows > 0){
+                                while($row = $result->fetch_assoc()){
+                                    echo "<p>{$row["nome"]}</p>";
+                                   echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
+                                }
+                            }
+                        ?>
                     </div>
                 </div><br>
             </div>
@@ -103,15 +127,33 @@ if($result->num_rows > 0){
                 <div class="card text-center">
                     <div class="card-body">
                         <img id="prod1" src="img/produtos/premiere/premiere.png" alt="" style="width: 300px; margin-bottom: 20px;"><br>
-                        <p>Adobe Premiere Pro 2025 Handbook</p>
-                        <h3 style="color: green;">R$ 110,00</h3>
+                        <?php 
+                            //iPhone
+                            $sql = "SELECT * FROM produto WHERE id = 3";
+                            $result = $conexao->query($sql);
+                            if($result->num_rows > 0){
+                                while($row = $result->fetch_assoc()){
+                                    echo "<p>{$row["nome"]}</p>";
+                                   echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
+                                }
+                            }
+                        ?>
                     </div>
                 </div><br>
                 <div class="card text-center">
                     <div class="card-body">
                         <img id="prod1" src="img/produtos/w10/win10.png" alt="" style="width: 300px; margin-bottom: 20px;"><br>
-                        <p>MS Win 11 Pro OEM Chave GLOBAL</p>
-                        <h3 style="color: green;">R$ 9  0,00</h3>
+                        <?php 
+                            //iPhone
+                            $sql = "SELECT * FROM produto WHERE id = 6";
+                            $result = $conexao->query($sql);
+                            if($result->num_rows > 0){
+                                while($row = $result->fetch_assoc()){
+                                    echo "<p>{$row["nome"]}</p>";
+                                   echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
+                                }
+                            }
+                        ?>
                     </div>
                 </div><br>
             </div>
