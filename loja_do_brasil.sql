@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 26/11/2025 às 21:04
+-- Tempo de geração: 01/12/2025 às 19:11
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -31,8 +31,20 @@ CREATE TABLE `produto` (
   `id` int(11) NOT NULL,
   `imagem` varchar(100) NOT NULL,
   `nome` varchar(100) NOT NULL,
-  `preço` varchar(100) NOT NULL
+  `preco` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `produto`
+--
+
+INSERT INTO `produto` (`id`, `imagem`, `nome`, `preco`) VALUES
+(1, '', 'iPhone 16 PRO MAX', 'R$ 10.000,00'),
+(2, '', 'Maquina de Lavar Roupa', 'R$ 2.000,00'),
+(3, '', 'Adobe Premiere PRO 2025', 'R$ 120,00'),
+(4, '', 'Notebook Lenovo', 'R$ 2.000,00'),
+(5, '', 'Ração de Gato', 'R$ 150,00'),
+(6, '', 'Chave do Windows 11', 'R$ 1.500,00');
 
 -- --------------------------------------------------------
 
@@ -49,14 +61,6 @@ CREATE TABLE `usuario` (
   `data_nascimento` date NOT NULL,
   `email` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `usuario`
---
-
-INSERT INTO `usuario` (`id`, `nome`, `usuario`, `senha`, `cpf`, `data_nascimento`, `email`) VALUES
-(1, 'Adriano Canto Junior', 'adriano.jr', '$2y$10$O.ymrbYzRQPuAdsnZMOZsOvp5CG6CSpDOyJ6SL98toKoAi/QKmQbG', 11010591924, '2006-07-17', 'adriano@email.com'),
-(2, 'Thiago Waltrik', 'thiago.w', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9', 123456789, '1111-11-11', 'thiago@email.com');
 
 --
 -- Índices para tabelas despejadas
@@ -82,7 +86,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
