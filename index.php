@@ -1,4 +1,17 @@
-<?php include("functions/conexao.php"); ?>
+<?php 
+include("functions/conexao.php"); 
+
+//iPhone
+$sql = "SELECT * FROM produto WHERE id = 1";
+$result = $conexao->query($sql);
+if($result->num_rows > 0){
+    while($row = $result->fetch_assoc()){
+        $iphone_nome = $row["nome"];
+        $iphone_preco = $row["preco"];
+    }
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -59,14 +72,13 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <img id="prod1" src="img/produtos/iPhone/iphone1.png" alt="" style="width: 300px; margin-bottom: 20px;"><br>
-                        <p>iPhone 16 PRO MAX 128GB</p>
-                        <h3 style="color: green;">R$ 9.000,00</h3>
+                        <p><?php echo isset($iphone_nome) ? $iphone_nome : 'Produto não encontrado'; ?></p>
+                        <h3 style="color: green;"><?php echo isset($iphone_preco) ? $iphone_preco : 'Preço não encontrado'; ?></h3>
                     </div>
                 </div><br>
                 <div class="card text-center">
                     <div class="card-body">
                         <img id="prod2" src="img/produtos/notebook/not1.png" alt="" style="width: 300px; margin-bottom: 20px;"><br>
-                        <p>Notebook 15.6" Lenovo IdeaPad</p>
                         <h3 style="color: green;">R$ 3.000,00</h3>
                     </div>
                 </div><br>
