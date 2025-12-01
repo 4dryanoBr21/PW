@@ -58,15 +58,15 @@
             <div class="col-md-4">
                 <div class="card text-center">
                     <div class="card-body">
-                        <img id="prod1" src="img/produtos/iPhone/iphone1.png" alt="" style="width: 300px; margin-bottom: 20px;"><br>
                         <?php 
                             //iPhone
                             $sql = "SELECT * FROM produto WHERE id = 1";
                             $result = $conexao->query($sql);
                             if($result->num_rows > 0){
                                 while($row = $result->fetch_assoc()){
+                                    echo "<img src='img/produtos/iPhone/{$row["imagem"]}.png' style='width: 300px; margin-bottom: 20px;'>";
                                     echo "<p>{$row["nome"]}</p>";
-                                   echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
+                                    echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
                                 }
                             }
                         ?>
