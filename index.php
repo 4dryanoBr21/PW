@@ -58,67 +58,33 @@
             <div class="col-md-4">
                 <div class="card text-center">
                     <div class="card-body">
-                        <?php 
-                            //iPhone
-                            $sql = "SELECT * FROM produto WHERE id = 1";
-                            $result = $conexao->query($sql);
-                            if($result->num_rows > 0){
-                                while($row = $result->fetch_assoc()){
-                                    echo "<img src='img/produtos/iPhone/{$row["imagem"]}.png' style='width: 300px; margin-bottom: 20px;'>";
-                                    echo "<p>{$row["nome"]}</p>";
-                                    echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
-                                }
+                        <?php
+                        //iPhone
+                        $sql = "SELECT * FROM produto WHERE id = 1";
+                        $result = $conexao->query($sql);
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<img src='img/produtos/{$row["imagem"]}.png' style='width: 300px;'>";
+                                echo "<p>{$row["nome"]}</p>";
+                                echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
                             }
+                        }
                         ?>
                     </div>
                 </div><br>
                 <div class="card text-center">
                     <div class="card-body">
-                        <img id="prod2" src="img/produtos/notebook/not1.png" alt="" style="width: 300px; margin-bottom: 20px;"><br>
-                        <?php 
-                            //iPhone
-                            $sql = "SELECT * FROM produto WHERE id = 4";
-                            $result = $conexao->query($sql);
-                            if($result->num_rows > 0){
-                                while($row = $result->fetch_assoc()){
-                                    echo "<p>{$row["nome"]}</p>";
-                                   echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
-                                }
+                        <?php
+                        //iPhone
+                        $sql = "SELECT * FROM produto WHERE id = 2";
+                        $result = $conexao->query($sql);
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<img src='img/produtos/{$row["imagem"]}.png' style='width: 300px;'>";
+                                echo "<p>{$row["nome"]}</p>";
+                                echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
                             }
-                        ?>
-                    </div>
-                </div><br>
-            </div>
-            <div class="col-md-4">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <img id="prod1" src="img/produtos/maquina_de_lavar/maquina1.png" alt="" style="width: 300px; margin-bottom: 20px;"><br>
-                        <?php 
-                            //iPhone
-                            $sql = "SELECT * FROM produto WHERE id = 2";
-                            $result = $conexao->query($sql);
-                            if($result->num_rows > 0){
-                                while($row = $result->fetch_assoc()){
-                                    echo "<p>{$row["nome"]}</p>";
-                                   echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
-                                }
-                            }
-                        ?>
-                    </div>
-                </div><br>
-                <div class="card text-center">
-                    <div class="card-body">
-                        <img id="prod1" src="img/produtos/raçaõ_para_gatos/ração.png" alt="" style="width: 300px; margin-bottom: 20px;"><br>
-                        <?php 
-                            //iPhone
-                            $sql = "SELECT * FROM produto WHERE id = 5";
-                            $result = $conexao->query($sql);
-                            if($result->num_rows > 0){
-                                while($row = $result->fetch_assoc()){
-                                    echo "<p>{$row["nome"]}</p>";
-                                   echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
-                                }
-                            }
+                        }
                         ?>
                     </div>
                 </div><br>
@@ -126,33 +92,67 @@
             <div class="col-md-4">
                 <div class="card text-center">
                     <div class="card-body">
-                        <img id="prod1" src="img/produtos/premiere/premiere.png" alt="" style="width: 300px; margin-bottom: 20px;"><br>
-                        <?php 
-                            //iPhone
-                            $sql = "SELECT * FROM produto WHERE id = 3";
-                            $result = $conexao->query($sql);
-                            if($result->num_rows > 0){
-                                while($row = $result->fetch_assoc()){
-                                    echo "<p>{$row["nome"]}</p>";
-                                   echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
-                                }
+                        <?php
+                        //iPhone
+                        $sql = "SELECT * FROM produto WHERE id = 3";
+                        $result = $conexao->query($sql);
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<img src='img/produtos/{$row["imagem"]}.png' style='width: 300px;'>";
+                                echo "<p>{$row["nome"]}</p>";
+                                echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
                             }
+                        }
                         ?>
                     </div>
                 </div><br>
                 <div class="card text-center">
                     <div class="card-body">
-                        <img id="prod1" src="img/produtos/w10/win10.png" alt="" style="width: 300px; margin-bottom: 20px;"><br>
-                        <?php 
-                            //iPhone
-                            $sql = "SELECT * FROM produto WHERE id = 6";
-                            $result = $conexao->query($sql);
-                            if($result->num_rows > 0){
-                                while($row = $result->fetch_assoc()){
-                                    echo "<p>{$row["nome"]}</p>";
-                                   echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
-                                }
+                        <?php
+                        //iPhone
+                        $sql = "SELECT * FROM produto WHERE id = 4";
+                        $result = $conexao->query($sql);
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<img src='img/produtos/{$row["imagem"]}.png' style='width: 300px;'>";
+                                echo "<p>{$row["nome"]}</p>";
+                                echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
                             }
+                        }
+                        ?>
+                    </div>
+                </div><br>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <?php
+                        //iPhone
+                        $sql = "SELECT * FROM produto WHERE id = 5";
+                        $result = $conexao->query($sql);
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<img src='img/produtos/{$row["imagem"]}.png' style='width: 300px;'>";
+                                echo "<p>{$row["nome"]}</p>";
+                                echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
+                            }
+                        }
+                        ?>
+                    </div>
+                </div><br>
+                <div class="card text-center">
+                    <div class="card-body">
+                        <?php
+                        //iPhone
+                        $sql = "SELECT * FROM produto WHERE id = 6";
+                        $result = $conexao->query($sql);
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<img src='img/produtos/{$row["imagem"]}.png' style='width: 300px;'>";
+                                echo "<p>{$row["nome"]}</p>";
+                                echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
+                            }
+                        }
                         ?>
                     </div>
                 </div><br>
@@ -162,7 +162,6 @@
 </body>
 
 <script>
-
     var entrar = document.getElementById("entrar")
 
     function login() {
@@ -170,11 +169,9 @@
     }
 
     entrar.addEventListener("click", login)
-
 </script>
 
 <script>
-
     var p1 = document.getElementById("prod1")
 
     function produto1() {
@@ -182,11 +179,9 @@
     }
 
     p1.addEventListener("click", produto1)
-
 </script>
 
 <script>
-
     var p2 = document.getElementById("prod2")
 
     function produto2() {
@@ -194,11 +189,9 @@
     }
 
     p2.addEventListener("click", produto2)
-
 </script>
 
 <script>
-
     var cart = document.getElementById("carrinho")
 
     function car_buy() {
@@ -206,11 +199,9 @@
     }
 
     cart.addEventListener("click", car_buy)
-
 </script>
 
 <script>
-
     var index = document.getElementById("logo")
 
     function home() {
@@ -218,14 +209,13 @@
     }
 
     index.addEventListener("click", home)
-
 </script>
 
 <script>
     const searchInput = document.querySelector('.form-control')
     const cards = document.querySelectorAll('.card')
 
-    searchInput.addEventListener('keyup', function () {
+    searchInput.addEventListener('keyup', function() {
         const termo = searchInput.value.toLowerCase()
 
         cards.forEach(card => {
