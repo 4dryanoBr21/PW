@@ -10,3 +10,8 @@ body {
 .navbar {
     background-color: #F2BC1B;
 }
+
+.row{
+    display: flex;
+    justify-content: center;
+}

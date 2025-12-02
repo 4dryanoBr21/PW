@@ -50,7 +50,7 @@
     </nav>
     <div class="container-fluid" style="margin-top: 100px;">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <div id="prod" class="card text-center">
                     <div class="card-body">
                         <?php
@@ -59,14 +59,16 @@
                         $result = $conexao->query($sql);
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
-                                echo "<img src='img/produtos/{$row["imagem"]}.png' style='width: 300px;'>";
+                                echo "<img class='img-thumbnail' src='img/produtos/{$row["imagem"]}.png'>";
                                 echo "<p>{$row["nome"]}</p>";
                                 echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
                             }
                         }
                         ?>
                     </div>
-                </div><br>
+                </div>
+            </div>
+            <div class="col-md-2">
                 <div class="card text-center">
                     <div class="card-body">
                         <?php
@@ -75,16 +77,16 @@
                         $result = $conexao->query($sql);
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
-                                echo "<img src='img/produtos/{$row["imagem"]}.png' style='width: 300px;'>";
+                                echo "<img class='img-thumbnail' src='img/produtos/{$row["imagem"]}.png'>";
                                 echo "<p>{$row["nome"]}</p>";
                                 echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
                             }
                         }
                         ?>
                     </div>
-                </div><br>
+                </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <div class="card text-center">
                     <div class="card-body">
                         <?php
@@ -93,14 +95,18 @@
                         $result = $conexao->query($sql);
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
-                                echo "<img src='img/produtos/{$row["imagem"]}.png' style='width: 300px;'>";
+                                echo "<img class='img-thumbnail' src='img/produtos/{$row["imagem"]}.png'>";
                                 echo "<p>{$row["nome"]}</p>";
                                 echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
                             }
                         }
                         ?>
                     </div>
-                </div><br>
+                </div>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-2">
                 <div class="card text-center">
                     <div class="card-body">
                         <?php
@@ -109,16 +115,16 @@
                         $result = $conexao->query($sql);
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
-                                echo "<img src='img/produtos/{$row["imagem"]}.png' style='width: 300px;'>";
+                                echo "<img class='img-thumbnail' src='img/produtos/{$row["imagem"]}.png'>";
                                 echo "<p>{$row["nome"]}</p>";
                                 echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
                             }
                         }
                         ?>
                     </div>
-                </div><br>
+                </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <div class="card text-center">
                     <div class="card-body">
                         <?php
@@ -127,14 +133,16 @@
                         $result = $conexao->query($sql);
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
-                                echo "<img src='img/produtos/{$row["imagem"]}.png' style='width: 300px;'>";
+                                echo "<img class='img-thumbnail' src='img/produtos/{$row["imagem"]}.png'>";
                                 echo "<p>{$row["nome"]}</p>";
                                 echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
                             }
                         }
                         ?>
                     </div>
-                </div><br>
+                </div>
+            </div>
+            <div class="col-md-2">
                 <div class="card text-center">
                     <div class="card-body">
                         <?php
@@ -143,17 +151,17 @@
                         $result = $conexao->query($sql);
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
-                                echo "<img src='img/produtos/{$row["imagem"]}.png' style='width: 300px;'>";
+                                echo "<img class='img-thumbnail' src='img/produtos/{$row["imagem"]}.png'>";
                                 echo "<p>{$row["nome"]}</p>";
                                 echo "<h3 style='color: green;'>{$row["preco"]}</h3>";
                             }
                         }
                         ?>
                     </div>
-                </div><br>
+                </div>
             </div>
         </div>
-    </div>
+    </div>  
 
     <script>
         const searchInput = document.querySelector('.form-control')

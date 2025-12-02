@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("./functions/conexao.php");
+include("../functions/conexao.php");
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $username = mysqli_real_escape_string($conexao, $username);
 
-    $sql = "SELECT id, usuario, senha FROM usuarios WHERE usuario = '$username' LIMIT 1";
+    $sql = "SELECT id, usuario, senha FROM usuario WHERE usuario = '$username' LIMIT 1";
     $result = mysqli_query($conexao, $sql);
 
     if ($result && mysqli_num_rows($result) === 1) {
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION["user_id"] = $user["id"];
             $_SESSION["username"] = $user["username"];
 
-            header("Location: index.php");
+            header("Location: ../index.php");
             exit;
         } else {
             $erro = "Senha incorreta.";
@@ -41,13 +41,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../style.css">
-    <link rel="shortcut icon" href="../img/loja_do_brasil_com_texto.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
     <title>Loja do Brasil - Login</title>
 </head>
 
 <body>
     <div class="container-fluid" style="display: flex; flex-direction: column; flex-wrap: nowrap; align-items: center;">
-        <img id="logo" src="img/loja_do_brasil_com_texto.png" alt="" style="width: 200px;">
+        <img id="logo" src="../img/loja_do_brasil_com_texto.png" alt="" style="width: 200px;">
         <div class="card" style="width: 300px;">
             <div class="card-body">
                 <form method="POST" action="">
@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     const index = document.getElementById("logo")
 
     function home() {
-        window.open("index.php", '_self')
+        window.open("../index.php", '_self')
     }
 
     index.addEventListener("click", home)

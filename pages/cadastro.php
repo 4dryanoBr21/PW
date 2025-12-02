@@ -1,5 +1,5 @@
 <?php
-include("./functions/conexao.php");
+include("../functions/conexao.php");
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
     $stmt->bind_param("sssiss", $nome, $usuario, $senha, $cpf, $data_nascimento, $email);
 
     if ($stmt->execute()) {
-        //header("Location: login.php");
+        header("Location: login.php");
         echo "Cadastro realizado com sucesso.";
     } else {
         echo "Erro: " . $stmt->error;
@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
 
 <body>
     <div class="container-fluid" style="display: flex; flex-direction: column; flex-wrap: nowrap; align-items: center;">
-        <img id="logo" src="img/loja_do_brasil_com_texto.png" alt="" style="width: 200px;">
+        <img id="logo" src="../img/loja_do_brasil_com_texto.png" alt="" style="width: 200px;">
         <div class="card" style="width: 300px;">
             <div class="card-body">
                 <form action="" method="post" id="form">
@@ -86,10 +86,10 @@ if (isset($_POST['submit'])) {
         var index = document.getElementById("logo")
 
         function home() {
-            window.open("index.php", '_self')
+            window.open("../index.php", '_self')
         }
 
-        index.addEventListener("click", home())
+        index.addEventListener("click", home)
     </script>
 
     <script>

@@ -1,4 +1,4 @@
-<?php include("functions/conexao.php"); ?>
+<?php include("../functions/conexao.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,7 @@
     <nav class="navbar fixed-top">
         <div class="container-fluid">
             <form class="d-flex" role="search">
-                <img id="logo" src="img/logo.png" class="img-fluid" alt="..." style="width: 40px; margin-right: 15px;">
+                <img id="logo" src="../img/logo.png" class="img-fluid" alt="..." style="width: 40px; margin-right: 15px;">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -49,157 +49,91 @@
         </div>
     </nav>
     <div class="container-fluid">
-        <div class="card" style="width: 500px; margin-top: 100px;">
-            <div class="card-body">
-                <div id="carouselExample" class="carousel slide">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="img/produtos/iPhone/iphone1.png" class="d-block w-100" alt="...">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card" style="margin-top: 100px; width: 800px;">
+                    <div class="card-body">
+                        <?php
+                        //iPhone
+                        $sql = "SELECT * FROM produto WHERE id = 1";
+                        $result = $conexao->query($sql);
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<img style='width: 400px' class='img-thumbnail' src='../img/produtos/{$row["imagem"]}.png'>";
+                                echo "<h1>{$row["nome"]}</h1>";
+                                echo "<h3 style='color: green; font-weight: bold;'>{$row["preco"]}</h3>";
+                            }
+                        }
+                        ?>
+                        <h6 style="color: green;">ou 12x de R$ 750,00 sem juros</h6>
+                        <h6 style="color: royalblue;">Entregue até terça feira</h6><br>
+                        <p> <img src="https://logospng.org/download/visa/logo-visa-256.png" alt="" style="width: 20px;"> <img
+                                src="https://logospng.org/download/mastercard/logo-mastercard-256.png" alt=""
+                                style="width: 20px;"> Cartões de Crédito</p>
+                        <p><img src="https://logospng.org/download/sicredi/logo-sicredi-icon-256.png" alt=""
+                                style="width: 20px;"> Cartão de Debito</p>
+                        <p><img src="https://logospng.org/download/pix/logo-pix-icone-256.png" alt="" style="width: 20px;"> PIX
+                        </p>
+                        <p><img src="img/tag.png" alt="" style="width: 20px;"> Boleto Bancario</p><br>
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" id="quantidade" placeholder="Quantidade"
+                                style="width: 150px;" value="1">
+                            <label for="floatingInput">Quantidade</label>
                         </div>
-                        <div class="carousel-item">
-                            <img src="img/produtos/iPhone/iphone2.png" class="d-block w-100" alt="...">
+                        <div class="d-grid gap-2">
+                            <button id="carrinho2" class="btn btn-primary" type="button" style="font-weight: bold;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                </svg>
+                                Adicionar ao Carrinho
+                            </button>
+                            <button class="btn btn-success" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                                    <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z" />
+                                </svg>
+                                Comprar Agora
+                            </button>
+                        </div><br>
+                        <?php
+                        //iPhone
+                        $sql = "SELECT * FROM produto WHERE id = 1";
+                        $result = $conexao->query($sql);
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<p>{$row["descricao"]}</p>";
+                            }
+                        }
+                        ?>
+                        </section>
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                                style="height: 100px"></textarea>
+                            <label for="floatingTextarea2">Digite aqui sua avaliação</label>
                         </div>
-                        <div class="carousel-item">
-                            <img src="img/produtos/iPhone/iphone3.png" class="d-block w-100" alt="...">
+                        <button type="button" class="btn btn-primary" style="margin-bottom: 40px; margin-top: 10px;">Publicar</button>
+                        <div class="avaliacoes overflow-auto" style="height: 200px;">
+                            <div class="avaliacao">
+                                00/00/0000 ⭐ ⭐ ⭐ ⭐ ⭐
+                                <p>Melhor produto do mundo!</p>
+                            </div><br>
+                            <div class="avaliacao">
+                                00/00/0000 ⭐ ⭐ ⭐ ⭐
+                                <p>Melhor produto do mundo!</p>
+                            </div><br>
+                            <div class="avaliacao">
+                                00/00/0000 ⭐ ⭐ ⭐
+                                <p>Melhor produto do mundo!</p>
+                            </div><br>
+                            <div class="avaliacao">
+                                00/00/0000 ⭐ ⭐
+                                <p>Melhor produto do mundo!</p>
+                            </div><br>
+                            <div class="avaliacao">
+                                00/00/0000 ⭐
+                                <p>Melhor produto do mundo!</p>
+                            </div><br>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button><br>
-                </div>
-                <h1>iPhone 15 PRO MAX 128GB</h1>
-                <h3 id="valor" style="color: green; font-weight: bold;">R$ 9.000,00</h3>
-                <h6 style="color: green;">ou 12x de R$ 750,00 sem juros</h6>
-                <h6 style="color: royalblue;">Entregue até terça feira</h6><br>
-                <p> <img src="https://logospng.org/download/visa/logo-visa-256.png" alt="" style="width: 20px;"> <img
-                        src="https://logospng.org/download/mastercard/logo-mastercard-256.png" alt=""
-                        style="width: 20px;"> Cartões de Crédito</p>
-                <p><img src="https://logospng.org/download/sicredi/logo-sicredi-icon-256.png" alt=""
-                        style="width: 20px;"> Cartão de Debito</p>
-                <p><img src="https://logospng.org/download/pix/logo-pix-icone-256.png" alt="" style="width: 20px;"> PIX
-                </p>
-                <p><img src="img/tag.png" alt="" style="width: 20px;"> Boleto Bancario</p><br>
-                <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="quantidade" placeholder="Quantidade"
-                        style="width: 150px;" value="1">
-                    <label for="floatingInput">Quantidade</label>
-                </div>
-                <div class="d-grid gap-2">
-                    <button id="carrinho2" class="btn btn-primary" type="button" style="font-weight: bold;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-                        </svg>
-                        Adicionar ao Carrinho
-                    </button>
-                    <button class="btn btn-success" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
-                            <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z"/>
-                        </svg>
-                        Comprar Agora
-                    </button>
-                </div><br>
-                <p>O iPhone 15 traz a Dynamic Island, câmera grande-angular de 48 MP e USB-C. Tudo em um vidro
-                    resistente colorido por infusão e design em alumínio. Destaques A Dynamic Island Chega ao iPhone 15
-                    A Dynamic Island mostra alertas e Atividades ao Vivo para você não perder nenhuma informação
-                    enquanto faz outras coisas. Você pode acompanhar sua próxima corrida, saber quem está ligando</p>
-                <section class="grid" aria-labelledby="especs-title">
-                    <div>
-                        <h2 id="especs-title">Especificações principais</h2>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th>Tela</th>
-                                    <td>OLED Super Retina XDR, 6,1" (~2556×1179, ≈460 ppi)</td>
-                                </tr>
-                                <tr>
-                                    <th>Brilho</th>
-                                    <td>~1000 nits (uso), ~1600 nits (HDR), ~2000 nits (externo)</td>
-                                </tr>
-                                <tr>
-                                    <th>Processador</th>
-                                    <td>A16 Bionic</td>
-                                </tr>
-                                <tr>
-                                    <th>Dimensões & peso</th>
-                                    <td>~147.6 × 71.6 × 7.8 mm · ~171 g</td>
-                                </tr>
-                                <tr>
-                                    <th>Armazenamento</th>
-                                    <td>128 GB · 256 GB · 512 GB</td>
-                                </tr>
-                                <tr>
-                                    <th>Construção</th>
-                                    <td>Frente Ceramic Shield, traseira de vidro, estrutura de alumínio</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div>
-                        <h2 id="camera-title">Câmeras</h2>
-                        <ul>
-                            <li>Traseira dupla:
-                                <ul>
-                                    <li>Principal 48 MP com estabilização (sensor-shift), ƒ/1.6</li>
-                                    <li>Ultra-angular 12 MP, campo ~120°, ƒ/2.4</li>
-                                </ul>
-                            </li>
-                            <li>Zoom: aproximado 2× óptico (por lente) e zoom digital até ~10×</li>
-                            <li>Frontal: 12 MP com autofocus</li>
-                        </ul>
-
-                        <h2 id="batt-title">Bateria & carregamento</h2>
-                        <ul>
-                            <li>Capacidade aproximada: 3349 mAh</li>
-                            <li>Conector: USB-C (carregamento com fio)</li>
-                            <li>Sem fio: MagSafe e compatibilidade Qi2</li>
-                        </ul>
-                    </div>
-
-                    <div class="full">
-                        <h2>Outras características</h2>
-                        <ul>
-                            <li>Certificação IP68 (resistência à água e poeira)</li>
-                            <li>Face ID para desbloqueio facial</li>
-                            <li>Dynamic Island (ilha dinâmica) substitui o notch</li>
-                            <li>Cores: preto, azul, verde, amarelo, rosa</li>
-                        </ul>
-                    </div>
-                </section>
-                <div class="form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-                        style="height: 100px"></textarea>
-                    <label for="floatingTextarea2">Digite aqui sua avaliação</label>
-                </div>
-                <button type="button" class="btn btn-primary" style="margin-bottom: 40px; margin-top: 10px;">Publicar</button>
-                <div class="avaliacoes overflow-auto" style="height: 200px;">
-                    <div class="avaliacao">
-                        00/00/0000 ⭐ ⭐ ⭐ ⭐ ⭐
-                        <p>Melhor produto do mundo!</p>
-                    </div><br>
-                    <div class="avaliacao">
-                        00/00/0000 ⭐ ⭐ ⭐ ⭐  
-                        <p>Melhor produto do mundo!</p>
-                    </div><br>
-                    <div class="avaliacao">
-                        00/00/0000 ⭐ ⭐ ⭐    
-                        <p>Melhor produto do mundo!</p>
-                    </div><br>
-                    <div class="avaliacao">
-                        00/00/0000 ⭐ ⭐      
-                        <p>Melhor produto do mundo!</p>
-                    </div><br>
-                    <div class="avaliacao">
-                        00/00/0000 ⭐        
-                        <p>Melhor produto do mundo!</p>
-                    </div><br>
                 </div>
             </div>
         </div>
@@ -207,7 +141,6 @@
 </body>
 
 <script>
-
     const entrar = document.getElementById("entrar")
 
     function login() {
@@ -215,11 +148,9 @@
     }
 
     entrar.addEventListener("click", login)
-
 </script>
 
 <script>
-
     const cart = document.getElementById("carrinho")
 
     function car_buy() {
@@ -227,35 +158,19 @@
     }
 
     cart.addEventListener("click", car_buy)
-
 </script>
 
 <script>
-
-    const cart2 = document.getElementById("carrinho2")
-
-    function car_buy2() {
-        window.open("carrinho.php", '_self')
-    }
-
-    cart2.addEventListener("click", car_buy2)
-
-</script>
-
-<script>
-
     const index = document.getElementById("logo")
 
     function home() {
-        window.open("index.php", '_self')
+        window.open("../index.php", '_self')
     }
 
     index.addEventListener("click", home)
-
 </script>
 
 <script>
-    
     const valor = document.getElementById("valor")
     const quantidade = document.getElementById("quantidade")
     const precoUnitario = 9000
@@ -267,7 +182,6 @@
     }
 
     quantidade.addEventListener('input', preco_quantidade)
-
 </script>
 
 </html>
