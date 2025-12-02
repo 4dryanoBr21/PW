@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 01/12/2025 às 19:11
+-- Tempo de geração: 02/12/2025 às 10:36
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -39,12 +39,12 @@ CREATE TABLE `produto` (
 --
 
 INSERT INTO `produto` (`id`, `imagem`, `nome`, `preco`) VALUES
-(1, '', 'iPhone 16 PRO MAX', 'R$ 10.000,00'),
-(2, '', 'Maquina de Lavar Roupa', 'R$ 2.000,00'),
-(3, '', 'Adobe Premiere PRO 2025', 'R$ 120,00'),
-(4, '', 'Notebook Lenovo', 'R$ 2.000,00'),
-(5, '', 'Ração de Gato', 'R$ 150,00'),
-(6, '', 'Chave do Windows 11', 'R$ 1.500,00');
+(1, 'iphone', 'iPhone 16 PRO MAX', 'R$ 10.000,00'),
+(2, 'maquina_de_lavar', 'Maquina de Lavar Roupa', 'R$ 2.000,00'),
+(3, 'premiere', 'Adobe Premiere PRO 2025', 'R$ 120,00'),
+(4, 'notebook', 'Notebook Lenovo', 'R$ 2.000,00'),
+(5, 'racao', 'Ração de Gato', 'R$ 150,00'),
+(6, 'windows', 'Chave do Windows 11', 'R$ 1.500,00');
 
 -- --------------------------------------------------------
 
