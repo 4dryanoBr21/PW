@@ -1,34 +1,12 @@
-body{
+@font-face {
+    font-family: "Montserrat";
+    src: url("fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
+}
+body {
     font-family: "Montserrat";
     background-color: #eee;
 }
 
-
-.navbar{
+.navbar {
     background-color: #F2BC1B;
-}
-
-.container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-}
-
-.container-fluid{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.card{
-    margin: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.cep{
-    display: flex;
-    padding: 20px;
 }

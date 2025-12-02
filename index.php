@@ -4,12 +4,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -56,7 +51,7 @@
     <div class="container-fluid" style="margin-top: 100px;">
         <div class="row">
             <div class="col-md-4">
-                <div class="card text-center">
+                <div id="prod" class="card text-center">
                     <div class="card-body">
                         <?php
                         //iPhone
@@ -75,7 +70,7 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <?php
-                        //iPhone
+                        //Maquina de Lavar Roupa
                         $sql = "SELECT * FROM produto WHERE id = 2";
                         $result = $conexao->query($sql);
                         if ($result->num_rows > 0) {
@@ -93,7 +88,7 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <?php
-                        //iPhone
+                        //Adobe Premiere
                         $sql = "SELECT * FROM produto WHERE id = 3";
                         $result = $conexao->query($sql);
                         if ($result->num_rows > 0) {
@@ -109,7 +104,7 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <?php
-                        //iPhone
+                        //Notebook Lenovo
                         $sql = "SELECT * FROM produto WHERE id = 4";
                         $result = $conexao->query($sql);
                         if ($result->num_rows > 0) {
@@ -127,7 +122,7 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <?php
-                        //iPhone
+                        //Ração de Gato
                         $sql = "SELECT * FROM produto WHERE id = 5";
                         $result = $conexao->query($sql);
                         if ($result->num_rows > 0) {
@@ -143,7 +138,7 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <?php
-                        //iPhone
+                        //Chave do Windows 11
                         $sql = "SELECT * FROM produto WHERE id = 6";
                         $result = $conexao->query($sql);
                         if ($result->num_rows > 0) {
@@ -159,75 +154,65 @@
             </div>
         </div>
     </div>
-</body>
 
-<script>
-    var entrar = document.getElementById("entrar")
+    <script>
+        const searchInput = document.querySelector('.form-control')
+        const cards = document.querySelectorAll('.card')
 
-    function login() {
-        window.open("login.php", '_self')
-    }
+        searchInput.addEventListener('keyup', function() {
+            const termo = searchInput.value.toLowerCase()
 
-    entrar.addEventListener("click", login)
-</script>
-
-<script>
-    var p1 = document.getElementById("prod1")
-
-    function produto1() {
-        window.open("produto01.php", '_self')
-    }
-
-    p1.addEventListener("click", produto1)
-</script>
-
-<script>
-    var p2 = document.getElementById("prod2")
-
-    function produto2() {
-        window.open("produto02.php", '_self')
-    }
-
-    p2.addEventListener("click", produto2)
-</script>
-
-<script>
-    var cart = document.getElementById("carrinho")
-
-    function car_buy() {
-        window.open("carrinho.php", '_self')
-    }
-
-    cart.addEventListener("click", car_buy)
-</script>
-
-<script>
-    var index = document.getElementById("logo")
-
-    function home() {
-        window.open("index.php", '_self')
-    }
-
-    index.addEventListener("click", home)
-</script>
-
-<script>
-    const searchInput = document.querySelector('.form-control')
-    const cards = document.querySelectorAll('.card')
-
-    searchInput.addEventListener('keyup', function() {
-        const termo = searchInput.value.toLowerCase()
-
-        cards.forEach(card => {
-            const texto = card.innerText.toLowerCase()
-            if (texto.includes(termo)) {
-                card.style.display = "block"
-            } else {
-                card.style.display = "none"
-            }
+            cards.forEach(card => {
+                const texto = card.innerText.toLowerCase()
+                if (texto.includes(termo)) {
+                    card.style.display = "block"
+                } else {
+                    card.style.display = "none"
+                }
+            })
         })
-    })
-</script>
+    </script>
 
+    <script>
+        var entrar = document.getElementById("entrar")
+
+        function login() {
+            window.open("pages/login.php", '_self')
+        }
+
+        entrar.addEventListener("click", login)
+    </script>
+
+    <script>
+        var p = document.getElementById("prod")
+
+        function produto() {
+            window.open("pages/produto.php", '_self')
+        }
+
+        p.addEventListener("click", produto)
+    </script>
+
+    <script>
+        var cart = document.getElementById("carrinho")
+
+        function car_buy() {
+            window.open("pages/carrinho.php", '_self')
+        }
+
+        cart.addEventListener("click", car_buy)
+    </script>
+
+    <script>
+        var index = document.getElementById("logo")
+
+        function home() {
+            window.open("index.php", '_self')
+        }
+
+        index.addEventListener("click", home)
+    </script>
+
+</body>
 
 </html>
