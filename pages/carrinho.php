@@ -25,7 +25,7 @@
     <nav class="navbar fixed-top">
         <div class="container-fluid">
             <form class="d-flex" role="search">
-                <img id="logo" src="img/logo.png" class="img-fluid" alt="..." style="width: 40px; margin-right: 15px;">
+                <img id="logo" src="../img/logo.png" class="img-fluid" alt="..." style="width: 40px; margin-right: 15px;">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -102,7 +102,6 @@
 </script>
 
 <script>
-
     var p1 = document.getElementById("prod1")
 
     function produto1() {
@@ -110,7 +109,6 @@
     }
 
     p1.addEventListener("click", produto1)
-
 </script>
 
 <script>
@@ -130,7 +128,7 @@
     var index = document.getElementById("logo")
 
     function home() {
-        window.open("index.php", '_self')
+        window.open("../index.php", '_self')
     }
 
     index.addEventListener("click", home)
