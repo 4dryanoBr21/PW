@@ -19,11 +19,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $user = mysqli_fetch_assoc($result);
 
         if (password_verify($password, $user["senha"])) {
+
             $_SESSION["user_id"] = $user["id"];
-            $_SESSION["username"] = $user["username"];
+            $_SESSION["username"] = $user["usuario"];
 
             header("Location: ../index.php");
             exit;
+        
         } else {
             $erro = "Senha incorreta.";
         }

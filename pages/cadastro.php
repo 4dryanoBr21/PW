@@ -14,20 +14,24 @@ if (isset($_POST['submit'])) {
     $data_nascimento = $_POST['data'];
     $email = $_POST['email'];
 
-    $stmt = $conexao->prepare("INSERT INTO usuario (nome, usuario, senha, cpf, data_nascimento, email) VALUES (?, ?, PASSWORD(?), ?, ?, ?)");
+    $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
-    $stmt->bind_param("sssiss", $nome, $usuario, $senha, $cpf, $data_nascimento, $email);
+    $stmt = $conexao->prepare(
+        "INSERT INTO usuario (nome, usuario, senha, cpf, data_nascimento, email) 
+         VALUES (?, ?, ?, ?, ?, ?)"
+    );
+
+    $stmt->bind_param("sssiss", $nome, $usuario, $senhaHash, $cpf, $data_nascimento, $email);
 
     if ($stmt->execute()) {
         header("Location: login.php");
-        echo "Cadastro realizado com sucesso.";
+        exit;
     } else {
         echo "Erro: " . $stmt->error;
     }
 
     $stmt->close();
 }
-
 ?>
 
 <!DOCTYPE html>
